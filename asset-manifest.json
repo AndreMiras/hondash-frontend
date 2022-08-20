@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hondash-frontend/static/css/main.073c9b0a.css",
-    "main.js": "/hondash-frontend/static/js/main.f4e8085e.js",
+    "main.css": "/hondash-frontend/static/css/main.c34cebea.css",
+    "main.js": "/hondash-frontend/static/js/main.eeb4d0d4.js",
     "static/js/787.bccc847b.chunk.js": "/hondash-frontend/static/js/787.bccc847b.chunk.js",
     "index.html": "/hondash-frontend/index.html",
-    "main.073c9b0a.css.map": "/hondash-frontend/static/css/main.073c9b0a.css.map",
-    "main.f4e8085e.js.map": "/hondash-frontend/static/js/main.f4e8085e.js.map",
+    "main.c34cebea.css.map": "/hondash-frontend/static/css/main.c34cebea.css.map",
+    "main.eeb4d0d4.js.map": "/hondash-frontend/static/js/main.eeb4d0d4.js.map",
     "787.bccc847b.chunk.js.map": "/hondash-frontend/static/js/787.bccc847b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.f4e8085e.js"
+    "static/css/main.c34cebea.css",
+    "static/js/main.eeb4d0d4.js"
   ]
 }
