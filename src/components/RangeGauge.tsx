@@ -3,6 +3,11 @@ import GaugeChart from "react-gauge-chart";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+const chartStyle = {
+  // https://github.com/Martin36/react-gauge-chart/issues/27
+  height: 70,
+};
+
 interface RangeGaugeProps {
   min?: number;
   max?: number;
@@ -22,6 +27,7 @@ const RangeGauge: FC<RangeGaugeProps> = ({
         percent={(value - min) / max}
         animate={false}
         formatTextValue={() => value.toFixed(1)}
+        style={chartStyle}
       />
     </Row>
     <Row className="justify-content-end">
