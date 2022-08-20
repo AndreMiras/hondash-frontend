@@ -1,15 +1,12 @@
 import { FC } from "react";
-import GaugeChart from "react-gauge-chart";
+import RangeGauge from "./RangeGauge";
 
 interface TpsProps {
   value: number;
 }
 
 const Tps: FC<TpsProps> = ({ value }) => (
-  <>
-    <GaugeChart percent={value / 100} animate={false} />
-    <p>TPS</p>
-  </>
+  <RangeGauge value={value} label="TPS" />
 );
 
 export default Tps;

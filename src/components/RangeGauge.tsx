@@ -4,13 +4,18 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 interface RangeGaugeProps {
-  min: number;
-  max: number;
+  min?: number;
+  max?: number;
   value: number;
-  label: string;
+  label?: string;
 }
 
-const RangeGauge: FC<RangeGaugeProps> = ({ value, min, max, label }) => (
+const RangeGauge: FC<RangeGaugeProps> = ({
+  value,
+  min = 0,
+  max = 100,
+  label = "",
+}) => (
   <>
     <Row>
       <GaugeChart
@@ -32,10 +37,5 @@ const RangeGauge: FC<RangeGaugeProps> = ({ value, min, max, label }) => (
     </Row>
   </>
 );
-RangeGauge.defaultProps = {
-  min: 0,
-  max: 100,
-  label: "",
-};
 
 export default RangeGauge;
