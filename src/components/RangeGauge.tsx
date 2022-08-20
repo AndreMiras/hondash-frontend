@@ -1,12 +1,6 @@
 import { FC } from "react";
-import GaugeChart from "react-gauge-chart";
+import ReactSpeedometer from "react-d3-speedometer";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
-const chartStyle = {
-  // https://github.com/Martin36/react-gauge-chart/issues/27
-  height: 70,
-};
 
 interface RangeGaugeProps {
   min?: number;
@@ -22,24 +16,26 @@ const RangeGauge: FC<RangeGaugeProps> = ({
   label = "",
 }) => (
   <>
-    <Row>
-      <GaugeChart
-        percent={(value - min) / max}
-        animate={false}
-        formatTextValue={() => value.toFixed(1)}
-        style={chartStyle}
-      />
+  <Row
+    className="justify-content-center">
+  <div
+    style={{
+      height: "200px",
+      width: "250px",
+    }}
+  >
+    <ReactSpeedometer
+      segments={3}
+      maxSegmentLabels={1}
+      currentValueText={(Math.round(value*10)/10).toString()}
+      value={value}
+      minValue={min}
+      maxValue={max}
+    />
+    </div>
     </Row>
-    <Row className="justify-content-end">
-      <Col sm={3} className="fs-6">
-        {min}
-      </Col>
-      <Col sm={5} className="fs-6 fw-bold">
-        {label}
-      </Col>
-      <Col sm={3} className="fs-6">
-        {max}
-      </Col>
+    <Row className="justify-content-center">
+    {label}
     </Row>
   </>
 );
