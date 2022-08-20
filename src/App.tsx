@@ -1,8 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import useWebSocket from 'react-use-websocket';
+import { WEBSOCKET_URL } from './utils/constants';
+
 
 function App() {
+  const {
+    lastJsonMessage,
+    readyState,
+  } = useWebSocket(WEBSOCKET_URL);
+  console.log({lastJsonMessage, readyState})
   return (
     <div className="App">
       <header className="App-header">
