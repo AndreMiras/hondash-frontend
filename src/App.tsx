@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
-import logo from "./logo.svg";
 import "./App.css";
 import { Message, MessageData, defaultMessageData } from "./types";
 import Speedometer from "./components/Speedometer";
+import Tps from "./components/Tps";
 import { WEBSOCKET_URL } from "./utils/constants";
 
 function App() {
@@ -18,16 +18,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Speedometer value={message.vss} />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Tps value={message.tps} />
       </header>
     </div>
   );

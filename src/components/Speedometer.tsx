@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-interface OdometerProps {
+interface SpeedometerProps {
   value: number;
 }
 
-const Speedometer: FC<OdometerProps> = ({ value }) => <h1>{value}</h1>;
+const Speedometer: FC<SpeedometerProps> = ({ value }) => <h1>{value}</h1>;
 
 export default Speedometer;
