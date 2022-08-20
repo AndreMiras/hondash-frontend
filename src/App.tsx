@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Message, MessageData, defaultMessageData } from "./types";
 import Speedometer from "./components/Speedometer";
 import RangeGauge from "./components/RangeGauge";
@@ -18,11 +22,19 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Speedometer value={message.vss} />
-        <RangeGauge value={message.ect} min={0} max={150} label={"ECT"} />
-        <Tps value={message.tps} />
-      </header>
+      <Container className="App-header">
+        <Row>
+          <Speedometer value={message.vss} />
+        </Row>
+        <Row>
+          <Col>
+            <RangeGauge value={message.ect} min={0} max={150} label={"ECT"} />
+          </Col>
+          <Col>
+            <Tps value={message.tps} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
