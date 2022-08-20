@@ -26,7 +26,10 @@ function App() {
     { value: message.eth, label: "ETH" },
     { value: message.map, max: 3, label: "MAP" },
   ];
-  const gaugesPropsRow2 = [{ value: message.tps, label: "TPS" }];
+  const gaugesPropsRow2 = [
+    { value: message.bat, max: 20, label: "Battery" },
+    { value: message.tps, label: "TPS" },
+  ];
   const gaugesPropsRows = [gaugesPropsRow1, gaugesPropsRow2];
 
   return (

@@ -1,4 +1,5 @@
 interface MessageData {
+  bat: number;
   ect: number;
   eth: number;
   gear: number;
@@ -16,6 +17,7 @@ interface Message {
 }
 
 const defaultMessageData = {
+  bat: 0,
   ect: 0,
   eth: 0,
   gear: 1,
