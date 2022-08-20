@@ -24,8 +24,9 @@ function App() {
     { value: message.iat, max: 50, label: "IAT" },
     { value: message.o2, max: 30, label: "AFR" },
     { value: message.eth, label: "ETH" },
-    { value: message.tps, label: "TPS" },
   ];
+  const gaugesPropsRow2 = [{ value: message.tps, label: "TPS" }];
+  const gaugesPropsRows = [gaugesPropsRow1, gaugesPropsRow2];
 
   return (
     <div className="App">
@@ -33,13 +34,15 @@ function App() {
         <Row>
           <Speedometer value={message.vss} />
         </Row>
-        <Row>
-          {gaugesPropsRow1.map((gaugeProps) => (
-            <Col xs={2} key={gaugeProps.label}>
-              <RangeGauge {...gaugeProps} />
-            </Col>
-          ))}
-        </Row>
+        {gaugesPropsRows.map((gaugesPropsRow) => (
+          <Row className="mt-4">
+            {gaugesPropsRow.map((gaugeProps) => (
+              <Col xs={2} key={gaugeProps.label}>
+                <RangeGauge {...gaugeProps} />
+              </Col>
+            ))}
+          </Row>
+        ))}
       </Container>
     </div>
   );
