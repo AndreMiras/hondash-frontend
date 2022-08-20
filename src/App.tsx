@@ -19,11 +19,11 @@ function App() {
     setMessage(lastJsonMessage.data);
   }, [lastJsonMessage]);
 
-  const gaugesRow1 = [
-    <RangeGauge value={message.ect} max={150} label="ECT" />,
-    <RangeGauge value={message.iat} max={50} label="IAT" />,
-    <RangeGauge value={message.o2} max={30} label="AFR" />,
-    <RangeGauge value={message.tps} label="TPS" />,
+  const gaugesPropsRow1 = [
+    { value: message.ect, max: 150, label: "ECT" },
+    { value: message.iat, max: 50, label: "IAT" },
+    { value: message.o2, max: 30, label: "AFR" },
+    { value: message.tps, label: "TPS" },
   ];
 
   return (
@@ -33,9 +33,9 @@ function App() {
           <Speedometer value={message.vss} />
         </Row>
         <Row>
-          {gaugesRow1.map((gauge) => (
-            <Col xs={2} key={gauge.props.label}>
-              {gauge}
+          {gaugesPropsRow1.map((gaugeProps) => (
+            <Col xs={2} key={gaugeProps.label}>
+              <RangeGauge {...gaugeProps} />
             </Col>
           ))}
         </Row>
