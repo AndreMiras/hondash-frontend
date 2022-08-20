@@ -30,6 +30,8 @@ function App() {
     { value: message.bat, max: 20, label: "Battery" },
     { value: message.cam, label: "CAM" },
     { value: message.tps, label: "TPS" },
+    { value: 0, label: "GAUGE1" },
+    { value: 0, label: "GAUGE2" },
   ];
   const gaugesPropsRows = [gaugesPropsRow1, gaugesPropsRow2];
 
