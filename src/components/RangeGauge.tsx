@@ -21,7 +21,7 @@ const RangeGauge: FC<RangeGaugeProps> = ({
       <GaugeChart
         percent={(value - min) / max}
         animate={false}
-        formatTextValue={() => value.toString()}
+        formatTextValue={() => value.toFixed(1)}
       />
     </Row>
     <Row className="justify-content-end">

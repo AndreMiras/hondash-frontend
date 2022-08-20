@@ -20,8 +20,9 @@ function App() {
   }, [lastJsonMessage]);
 
   const gaugesRow1 = [
-    <RangeGauge value={message.ect} min={0} max={150} label="ECT" />,
+    <RangeGauge value={message.ect} max={150} label="ECT" />,
     <RangeGauge value={message.iat} max={50} label="IAT" />,
+    <RangeGauge value={message.o2} max={30} label="AFR" />,
     <RangeGauge value={message.tps} label="TPS" />,
   ];
 
@@ -33,7 +34,9 @@ function App() {
         </Row>
         <Row>
           {gaugesRow1.map((gauge) => (
-            <Col xs={2}>{gauge}</Col>
+            <Col xs={2} key={gauge.props.label}>
+              {gauge}
+            </Col>
           ))}
         </Row>
       </Container>
