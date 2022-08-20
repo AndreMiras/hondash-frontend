@@ -37,12 +37,12 @@ function App() {
 
   return (
     <div className="App">
-      <Container className="App-header">
+      <Container fluid className="App-header">
         <Row>
           <Speedometer value={message.vss} />
         </Row>
         {gaugesPropsRows.map((gaugesPropsRow) => (
-          <Row className="mt-4">
+          <Row className="mt-4 justify-content-center">
             {gaugesPropsRow.map((gaugeProps) => (
               <Col xs={2} key={gaugeProps.label}>
                 <RangeGauge {...gaugeProps} />
