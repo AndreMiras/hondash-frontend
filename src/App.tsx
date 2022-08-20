@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
-import useWebSocket, { ReadyState } from 'react-use-websocket';
-import logo from './logo.svg';
-import './App.css';
-import { Message, MessageData, defaultMessageData } from './types'
-import Speedometer from './components/Speedometer'
-import { WEBSOCKET_URL } from './utils/constants';
-
+import useWebSocket  from "react-use-websocket";
+import logo from "./logo.svg";
+import "./App.css";
+import { Message, MessageData, defaultMessageData } from "./types";
+import Speedometer from "./components/Speedometer";
+import { WEBSOCKET_URL } from "./utils/constants";
 
 function App() {
-  const { lastJsonMessage, readyState } = useWebSocket<Message>(WEBSOCKET_URL);
+  const { lastJsonMessage } = useWebSocket<Message>(WEBSOCKET_URL);
   const [message, setMessage] = useState<MessageData>(defaultMessageData);
 
   useEffect(() => {
-    if (lastJsonMessage === null) return
-    setMessage(lastJsonMessage.data)
+    if (lastJsonMessage === null) return;
+    setMessage(lastJsonMessage.data);
   }, [lastJsonMessage]);
 
   return (
