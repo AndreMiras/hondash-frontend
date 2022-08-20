@@ -1,23 +1,26 @@
-import React from 'react';
+import { useState, useEffect } from "react";
+import useWebSocket, { ReadyState } from 'react-use-websocket';
 import logo from './logo.svg';
 import './App.css';
-import useWebSocket from 'react-use-websocket';
+import { Message, MessageData, defaultMessageData } from './types'
+import Speedometer from './components/Speedometer'
 import { WEBSOCKET_URL } from './utils/constants';
 
 
 function App() {
-  const {
-    lastJsonMessage,
-    readyState,
-  } = useWebSocket(WEBSOCKET_URL);
-  console.log({lastJsonMessage, readyState})
+  const { lastJsonMessage, readyState } = useWebSocket<Message>(WEBSOCKET_URL);
+  const [message, setMessage] = useState<MessageData>(defaultMessageData);
+
+  useEffect(() => {
+    if (lastJsonMessage === null) return
+    setMessage(lastJsonMessage.data)
+  }, [lastJsonMessage]);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Speedometer value={message.vss} />
         <a
           className="App-link"
           href="https://reactjs.org"
