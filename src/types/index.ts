@@ -1,4 +1,5 @@
 interface MessageData {
+  ect: number;
   gear: number;
   odo: number;
   tps: number;
@@ -11,6 +12,7 @@ interface Message {
 }
 
 const defaultMessageData = {
+  ect: 0,
   gear: 1,
   odo: 0,
   tps: 0,
