@@ -4,6 +4,8 @@ interface SpeedometerProps {
   value: number;
 }
 
-const Speedometer: FC<SpeedometerProps> = ({ value }) => <h1>{value}</h1>;
+const Speedometer: FC<SpeedometerProps> = ({ value }) => (
+  <p className="fs-1">{value}</p>
+);
 
 export default Speedometer;

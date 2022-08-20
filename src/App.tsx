@@ -27,10 +27,10 @@ function App() {
           <Speedometer value={message.vss} />
         </Row>
         <Row>
-          <Col>
+          <Col xs={2}>
             <RangeGauge value={message.ect} min={0} max={150} label={"ECT"} />
           </Col>
-          <Col>
+          <Col xs={2}>
             <Tps value={message.tps} />
           </Col>
         </Row>

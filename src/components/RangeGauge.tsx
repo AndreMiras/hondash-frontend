@@ -1,5 +1,7 @@
 import { FC } from "react";
 import GaugeChart from "react-gauge-chart";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 interface RangeGaugeProps {
   min: number;
@@ -10,14 +12,24 @@ interface RangeGaugeProps {
 
 const RangeGauge: FC<RangeGaugeProps> = ({ value, min, max, label }) => (
   <>
-    <GaugeChart
-      percent={(value - min) / max}
-      animate={false}
-      formatTextValue={() => value.toString()}
-    />
-    <span>
-      {min} {label} {max}
-    </span>
+    <Row>
+      <GaugeChart
+        percent={(value - min) / max}
+        animate={false}
+        formatTextValue={() => value.toString()}
+      />
+    </Row>
+    <Row className="justify-content-end">
+      <Col sm={3} className="fs-6">
+        {min}
+      </Col>
+      <Col sm={5} className="fs-6 fw-bold">
+        {label}
+      </Col>
+      <Col sm={3} className="fs-6">
+        {max}
+      </Col>
+    </Row>
   </>
 );
 RangeGauge.defaultProps = {
