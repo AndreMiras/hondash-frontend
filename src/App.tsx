@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Message, MessageData, defaultMessageData } from "./types";
 import Speedometer from "./components/Speedometer";
 import RangeGauge from "./components/RangeGauge";
-import Tps from "./components/Tps";
 import { WEBSOCKET_URL } from "./utils/constants";
 
 function App() {
@@ -20,6 +19,12 @@ function App() {
     setMessage(lastJsonMessage.data);
   }, [lastJsonMessage]);
 
+  const gaugesRow1 = [
+    <RangeGauge value={message.ect} min={0} max={150} label="ECT" />,
+    <RangeGauge value={message.iat} max={50} label="IAT" />,
+    <RangeGauge value={message.tps} label="TPS" />,
+  ];
+
   return (
     <div className="App">
       <Container className="App-header">
@@ -27,12 +32,9 @@ function App() {
           <Speedometer value={message.vss} />
         </Row>
         <Row>
-          <Col xs={2}>
-            <RangeGauge value={message.ect} min={0} max={150} label={"ECT"} />
-          </Col>
-          <Col xs={2}>
-            <Tps value={message.tps} />
-          </Col>
+          {gaugesRow1.map((gauge) => (
+            <Col xs={2}>{gauge}</Col>
+          ))}
         </Row>
       </Container>
     </div>
