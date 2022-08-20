@@ -3,6 +3,7 @@ interface MessageData {
   eth: number;
   gear: number;
   iat: number;
+  map: number;
   odo: number;
   o2: number;
   tps: number;
@@ -19,6 +20,7 @@ const defaultMessageData = {
   eth: 0,
   gear: 1,
   iat: 0,
+  map: 0,
   odo: 0,
   o2: 0,
   tps: 0,

@@ -24,6 +24,7 @@ function App() {
     { value: message.iat, max: 50, label: "IAT" },
     { value: message.o2, max: 30, label: "AFR" },
     { value: message.eth, label: "ETH" },
+    { value: message.map, max: 3, label: "MAP" },
   ];
   const gaugesPropsRow2 = [{ value: message.tps, label: "TPS" }];
   const gaugesPropsRows = [gaugesPropsRow1, gaugesPropsRow2];
