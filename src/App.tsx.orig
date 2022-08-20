@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import useWebSocket from "react-use-websocket";
+<<<<<<< HEAD
+import useWebSocket  from "react-use-websocket";
+=======
+import useWebSocket, { ReadyState } from "react-use-websocket";
+>>>>>>> 0239187 (:rotating_light: yarn format)
 import logo from "./logo.svg";
 import "./App.css";
 import { Message, MessageData, defaultMessageData } from "./types";
