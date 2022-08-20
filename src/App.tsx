@@ -23,6 +23,7 @@ function App() {
     { value: message.ect, max: 150, label: "ECT" },
     { value: message.iat, max: 50, label: "IAT" },
     { value: message.o2, max: 30, label: "AFR" },
+    { value: message.eth, label: "ETH" },
     { value: message.tps, label: "TPS" },
   ];
 
