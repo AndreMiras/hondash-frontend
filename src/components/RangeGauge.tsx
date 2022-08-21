@@ -8,6 +8,7 @@ interface RangeGaugeProps {
   max?: number;
   value: number;
   label?: string;
+  colors?: string[];
 }
 
 const RangeGauge: FC<RangeGaugeProps> = ({
@@ -15,6 +16,7 @@ const RangeGauge: FC<RangeGaugeProps> = ({
   min = 0,
   max = 100,
   label = "",
+  colors = ["#00FF00", "#FF0000"],
 }) => {
   /*
    * We have to dynamically reset the height on width change, refs:
@@ -42,6 +44,7 @@ const RangeGauge: FC<RangeGaugeProps> = ({
           animate={false}
           formatTextValue={() => value.toFixed(1)}
           style={chartStyle}
+          colors={colors}
         />
       </Row>
       <Row className="justify-content-end">

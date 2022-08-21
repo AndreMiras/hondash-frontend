@@ -8,6 +8,7 @@ interface MessageData {
   map: number;
   odo: number;
   o2: number;
+  rpm: number;
   tps: number;
   vss: number;
 }
@@ -27,6 +28,7 @@ const defaultMessageData = {
   map: 0,
   odo: 0,
   o2: 0,
+  rpm: 0,
   tps: 0,
   vss: 0,
 };

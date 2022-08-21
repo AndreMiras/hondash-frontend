@@ -1,11 +1,12 @@
 import { FC } from "react";
+import RangeGauge from "./RangeGauge";
 
 interface SpeedometerProps {
   value: number;
 }
 
 const Speedometer: FC<SpeedometerProps> = ({ value }) => (
-  <p className="fs-1">{value}</p>
+  <RangeGauge value={value} max={300} colors={["#FFC371", "#FF5F6D"]} />
 );
 
 export default Speedometer;

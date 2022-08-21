@@ -6,8 +6,9 @@ import Col from "react-bootstrap/Col";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Message, MessageData, defaultMessageData } from "./types";
-import Speedometer from "./components/Speedometer";
 import RangeGauge from "./components/RangeGauge";
+import Rpm from "./components/Rpm";
+import Speedometer from "./components/Speedometer";
 import { WEBSOCKET_URL } from "./utils/constants";
 
 function App() {
@@ -38,8 +39,13 @@ function App() {
   return (
     <div className="App">
       <Container fluid className="App-header">
-        <Row>
-          <Speedometer value={message.vss} />
+        <Row className="justify-content-center">
+          <Col xs={5}>
+            <Rpm value={message.rpm} />
+          </Col>
+          <Col xs={5}>
+            <Speedometer value={message.vss} />
+          </Col>
         </Row>
         {gaugesPropsRows.map((gaugesPropsRow, i) => (
           <Row key={i} className="mt-4 justify-content-center">
