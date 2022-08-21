@@ -6,7 +6,12 @@ interface SpeedometerProps {
 }
 
 const Speedometer: FC<SpeedometerProps> = ({ value }) => (
-  <RangeGauge value={value} max={300} colors={["#FFC371", "#FF5F6D"]} />
+  <RangeGauge
+    value={value}
+    max={300}
+    label="Speed"
+    colors={["#FFC371", "#FF5F6D"]}
+  />
 );
 
 export default Speedometer;

@@ -6,7 +6,12 @@ interface RpmProps {
 }
 
 const Rpm: FC<RpmProps> = ({ value }) => (
-  <RangeGauge value={value} max={9000} colors={["#FFC371", "#FF5F6D"]} />
+  <RangeGauge
+    value={value}
+    max={9000}
+    label="RPM"
+    colors={["#FFC371", "#FF5F6D"]}
+  />
 );
 
 export default Rpm;
