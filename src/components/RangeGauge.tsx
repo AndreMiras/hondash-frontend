@@ -40,7 +40,7 @@ const RangeGauge: FC<RangeGaugeProps> = ({
     <>
       <Row ref={ref}>
         <GaugeChart
-          percent={(value - min) / max}
+          percent={Math.min((value - min) / max, 1)}
           animate={false}
           formatTextValue={() => value.toFixed(1)}
           style={chartStyle}
