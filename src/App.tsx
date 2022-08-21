@@ -41,8 +41,8 @@ function App() {
         <Row>
           <Speedometer value={message.vss} />
         </Row>
-        {gaugesPropsRows.map((gaugesPropsRow) => (
-          <Row className="mt-4 justify-content-center">
+        {gaugesPropsRows.map((gaugesPropsRow, i) => (
+          <Row key={i} className="mt-4 justify-content-center">
             {gaugesPropsRow.map((gaugeProps) => (
               <Col xs={2} key={gaugeProps.label}>
                 <RangeGauge {...gaugeProps} />
